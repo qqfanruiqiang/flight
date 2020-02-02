@@ -27,7 +27,7 @@ public class FlightServiceImpl implements FlightService {
             int endId=list.get(i).getEndTerminalId();
             Type type=flightDao.queryPlaneType(typeId);
             String str="";
-            str=list.get(i).getName()+type.getName()+"("+type.getTypeName()+")";
+            str=list.get(i).getName()+"<br>"+type.getName()+"<br>"+"("+type.getTypeName()+")";
             list.get(i).setName(str);
             Area area=flightDao.queryNameById(startId);
             String idName=area.getName();
@@ -36,7 +36,7 @@ public class FlightServiceImpl implements FlightService {
             SimpleDateFormat sdf=new SimpleDateFormat("HH:mm");
             String format = sdf.format(startTime);
             String str2="";
-            str2=format+pidName+idName;
+            str2=format+"<br>"+pidName+"<br>"+idName;
             list.get(i).setStartTimeStr(str2);
             Area area1=flightDao.queryNameById(endId);
             String idName1=area1.getName();
@@ -44,7 +44,7 @@ public class FlightServiceImpl implements FlightService {
             Date endTime = list.get(i).getEndTime();
             String format1 = sdf.format(endTime);
             String str3="";
-            str3=format1+pidName1+idName1;
+            str3=format1+"<br>"+pidName1+"<br>"+idName1;
             list.get(i).setEndTimeStr(str3);
             int flightId=list.get(i).getId();
             Ticket ticket=flightDao.getTicketById(flightId);
