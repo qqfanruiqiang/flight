@@ -16,4 +16,10 @@ import java.util.List;
 public class FlightController {
     @Autowired
     private FlightService flightService;
+    @RequestMapping("queryFlight")
+    @ResponseBody
+    public Bean<Flight> queryFlight(Bean<Flight> bean){
+        flightService.queryFlight(bean);
+        return bean;
+    }
 }

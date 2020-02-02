@@ -3,5 +3,25 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fh.dao.FlightDao" >
-
+<select id="queryCount" resultType="int">
+    select count(*) from k_flight
+</select>
+    <select id="queryFlight" parameterType="com.fh.model.Bean" resultType="com.fh.model.Flight">
+        select id,name,typeId,startTime,endTime,startTerminalId,endTerminalId
+         from k_flight
+         limit #{start},#{length}
+    </select>
+    <select id="queryPlaneType" parameterType="int" resultType="com.fh.model.Type">
+        select a.id,a.name,b.name typeName from k_plane_type a left join k_plane_type_name b
+        on a.type=b.id where a.type=#{typeId}
+    </select>
+    <select id="queryNameById" parameterType="int" resultType="com.fh.model.Area">
+        select * from k_area where id=#{startId}
+    </select>
+    <select id="queryNameByPid" parameterType="int" resultType="string">
+        select name from k_area where id=#{pid}
+    </select>
+    <select id="getTicketById" parameterType="int" resultType="com.fh.model.Ticket">
+        select * from k_flight_ticket where flightId=#{flightId}
+    </select>
 </mapper>
