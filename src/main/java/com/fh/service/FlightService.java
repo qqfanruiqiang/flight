@@ -26,4 +26,8 @@ public interface FlightService {
     void addflight(Flight flight);
 
     void shanchu(int id);
+
+    Flight toUpdate(int id);
+
+    void updateflight(Flight flight);
 }

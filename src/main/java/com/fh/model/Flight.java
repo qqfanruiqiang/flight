@@ -21,6 +21,45 @@ public class Flight {
     private int count;
     private double price;
     private int jicang;
+private int chengshi;
+private int jichang;
+private int chengshi1;
+private int jichang1;
+
+
+    public int getChengshi() {
+        return chengshi;
+    }
+
+    public void setChengshi(int chengshi) {
+        this.chengshi = chengshi;
+    }
+
+    public int getJichang() {
+        return jichang;
+    }
+
+    public void setJichang(int jichang) {
+        this.jichang = jichang;
+    }
+
+
+    public int getChengshi1() {
+        return chengshi1;
+    }
+
+    public void setChengshi1(int chengshi1) {
+        this.chengshi1 = chengshi1;
+    }
+
+    public int getJichang1() {
+        return jichang1;
+    }
+
+    public void setJichang1(int jichang1) {
+        this.jichang1 = jichang1;
+    }
+
 
     public int getJicang() {
         return jicang;

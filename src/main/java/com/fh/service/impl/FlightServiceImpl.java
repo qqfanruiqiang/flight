@@ -105,4 +105,31 @@ public class FlightServiceImpl implements FlightService {
         flightDao.shanchu1(id);
         flightDao.shanchu2(id);
     }
+
+    @Override
+    public Flight toUpdate(int id) {
+        Flight flight=flightDao.findJipiao(id);
+        int count=flight.getCount();
+        double price=flight.getPrice();
+        int jicang=flight.getJicang();
+        flight=flightDao.findhangbanById(id);
+        int jichang=flightDao.findjichangByhangzhanlou(flight.getStartTerminalId());
+        int chengshi=flightDao.findchengshiByjichang(jichang);
+        int jichang1=flightDao.findjichangByhangzhanlou(flight.getEndTerminalId());
+        int chengshi1=flightDao.findchengshiByjichang(jichang1);
+        flight.setJichang(jichang);
+        flight.setChengshi(chengshi);
+        flight.setJichang1(jichang1);
+        flight.setChengshi1(chengshi1);
+        flight.setCount(count);
+        flight.setPrice(price);
+        flight.setJicang(jicang);
+        return flight;
+    }
+
+    @Override
+    public void updateflight(Flight flight) {
+        flightDao.updateflight(flight);
+        flightDao.updateJipiao(flight);
+    }
 }

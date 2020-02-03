@@ -80,5 +80,15 @@ public class FlightController {
     public void shanchu(int id){
         flightService.shanchu(id);
     }
-
+    @RequestMapping("toUpdate")
+    @ResponseBody
+    public Flight toUpdate(int id){
+       Flight flight= flightService.toUpdate(id);
+       return flight;
+    }
+    @RequestMapping("updateflight")
+    @ResponseBody
+    public void updateflight(Flight flight){
+        flightService.updateflight(flight);
+    }
 }

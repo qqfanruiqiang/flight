@@ -63,4 +63,26 @@
     <delete id="shanchu2" parameterType="int">
 delete from k_flight where id=#{id}
     </delete>
+    <select id="findJipiao" parameterType="int" resultType="com.fh.model.Flight">
+        select type jicang,totalCount count,price from k_flight_ticket where flightId=#{id}
+    </select>
+    <select id="findhangbanById" parameterType="int" resultType="com.fh.model.Flight">
+        select * from k_flight  where id=#{id}
+    </select>
+    <select id="findjichangByhangzhanlou" parameterType="int" resultType="int">
+        select pid from k_area where id=#{startTerminalId}
+    </select>
+    <select id="findchengshiByjichang" parameterType="int" resultType="int">
+        select pid from k_area where id=#{jichang}
+    </select>
+    <update id="updateflight" parameterType="com.fh.model.Flight">
+        update k_flight set
+        name=#{name},typeId=#{typeId},startTime=#{startTime},endTime=#{endTime},startTerminalId=#{startTerminalId},endTerminalId=#{endTerminalId}
+        where id=#{id}
+    </update>
+    <update id="updateJipiao" parameterType="com.fh.model.Flight">
+        update k_flight_ticket set
+        type=#{jicang},totalCount=#{count},price=#{price}
+        where flightId=#{id}
+    </update>
 </mapper>

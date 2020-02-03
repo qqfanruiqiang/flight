@@ -40,4 +40,16 @@ public interface FlightDao {
     void shanchu1(int id);
 
     void shanchu2(int id);
+
+    Flight findJipiao(int id);
+
+    Flight findhangbanById(int id);
+
+    int findjichangByhangzhanlou(int startTerminalId);
+
+    int findchengshiByjichang(int jichang);
+
+    void updateflight(Flight flight);
+
+    void updateJipiao(Flight flight);
 }
