@@ -53,4 +53,50 @@ public class FlightServiceImpl implements FlightService {
         }
         bean.setData(list);
     }
+
+    @Override
+    public List<Area> xiala1() {
+        return flightDao.xiala1();
+    }
+
+    @Override
+    public List<Area> xiala2(int id) {
+        return flightDao.xiala2(id);
+    }
+
+    @Override
+    public List<Area> xiala3(int id) {
+        return flightDao.xiala3(id);
+    }
+
+    @Override
+    public List<Area> xialaa() {
+        return flightDao.xialaa();
+    }
+
+    @Override
+    public List<Area> xialab(int id) {
+        return flightDao.xialab(id);
+    }
+
+    @Override
+    public List<Area> xialac(int id) {
+        return flightDao.xialac(id);
+    }
+
+    @Override
+    public List<Type> queryJixing() {
+        return flightDao.queryJixing();
+    }
+
+    @Override
+    public List<TicketName> queryJipiao() {
+        return flightDao.queryJipiao();
+    }
+
+    @Override
+    public void addflight(Flight flight) {
+        flightDao.addflight(flight);
+        flightDao.addJipiao(flight);
+    }
 }

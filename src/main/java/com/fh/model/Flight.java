@@ -8,11 +8,11 @@ public class Flight {
     private int id;
     private String name;
     private int typeId;
-    @DateTimeFormat(pattern = "HH:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date startTime;
     private String startTimeStr;
     private String endTimeStr;
-    @DateTimeFormat(pattern = "HH:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date endTime;
     private int startTerminalId;
     private int endTerminalId;
@@ -20,6 +20,15 @@ public class Flight {
     private String endFlight;
     private int count;
     private double price;
+    private int jicang;
+
+    public int getJicang() {
+        return jicang;
+    }
+
+    public void setJicang(int jicang) {
+        this.jicang = jicang;
+    }
 
     public String getStartTimeStr() {
         return startTimeStr;

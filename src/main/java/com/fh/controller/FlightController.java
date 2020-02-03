@@ -22,4 +22,58 @@ public class FlightController {
         flightService.queryFlight(bean);
         return bean;
     }
+    @RequestMapping("xiala1")
+    @ResponseBody
+    public List<Area> xiala1(){
+        List<Area> list=flightService.xiala1();
+        return list;
+    }
+    @RequestMapping("xiala2")
+    @ResponseBody
+    public List<Area> xiala2(int id){
+        List<Area> list=flightService.xiala2(id);
+        return list;
+    }
+    @RequestMapping("xiala3")
+    @ResponseBody
+    public List<Area> xiala3(int id){
+        List<Area> list=flightService.xiala3(id);
+        return list;
+    }
+    @RequestMapping("xialaa")
+    @ResponseBody
+    public List<Area> xialaa(){
+        List<Area> list=flightService.xialaa();
+        return list;
+    }
+    @RequestMapping("xialab")
+    @ResponseBody
+    public List<Area> xialab(int id){
+        List<Area> list=flightService.xialab(id);
+        return list;
+    }
+    @RequestMapping("xialac")
+    @ResponseBody
+    public List<Area> xialac(int id){
+        List<Area> list=flightService.xialac(id);
+        return list;
+    }
+    @RequestMapping("queryJixing")
+    @ResponseBody
+    public List<Type> queryJixing(){
+        List<Type> list=flightService.queryJixing();
+        return list;
+    }
+    @RequestMapping("queryJipiao")
+    @ResponseBody
+    public List<TicketName> queryJipiao(){
+        List<TicketName> list=flightService.queryJipiao();
+        return list;
+    }
+    @RequestMapping("addflight")
+    @ResponseBody
+    public void addflight(Flight flight){
+        flightService.addflight(flight);
+    }
+
 }

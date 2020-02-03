@@ -24,4 +24,37 @@
     <select id="getTicketById" parameterType="int" resultType="com.fh.model.Ticket">
         select * from k_flight_ticket where flightId=#{flightId}
     </select>
+    <select id="xiala1" resultType="com.fh.model.Area">
+        select * from k_area  where pid=0
+    </select>
+    <select id="xiala2" parameterType="int" resultType="com.fh.model.Area">
+        select * from k_area  where pid=#{id}
+    </select>
+    <select id="xiala3" parameterType="int" resultType="com.fh.model.Area">
+        select * from k_area  where pid=#{id}
+    </select>
+    <select id="xialaa" resultType="com.fh.model.Area">
+        select * from k_area  where pid=0
+    </select>
+    <select id="xialab" parameterType="int" resultType="com.fh.model.Area">
+        select * from k_area  where pid=#{id}
+    </select>
+    <select id="xialac" parameterType="int" resultType="com.fh.model.Area">
+        select * from k_area  where pid=#{id}
+    </select>
+    <select id="queryJixing" resultType="com.fh.model.Type">
+        select * from k_plane_type
+    </select>
+    <select id="queryJipiao" resultType="com.fh.model.TicketName">
+        select * from k_flight_ticket_type
+    </select>
+    <insert id="addflight" parameterType="com.fh.model.Flight">
+        <selectKey keyProperty="id" order="AFTER" resultType="Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into k_flight values (null,#{name},#{typeId},#{startTime},#{endTime},#{startTerminalId},#{endTerminalId})
+    </insert>
+    <insert id="addJipiao" parameterType="com.fh.model.Flight">
+        insert into k_flight_ticket values (null,#{id},#{jicang},#{count},#{price})
+    </insert>
 </mapper>
