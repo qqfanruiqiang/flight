@@ -99,4 +99,10 @@ public class FlightServiceImpl implements FlightService {
         flightDao.addflight(flight);
         flightDao.addJipiao(flight);
     }
+
+    @Override
+    public void shanchu(int id) {
+        flightDao.shanchu1(id);
+        flightDao.shanchu2(id);
+    }
 }

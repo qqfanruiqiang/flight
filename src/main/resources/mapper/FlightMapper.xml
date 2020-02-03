@@ -57,4 +57,10 @@
     <insert id="addJipiao" parameterType="com.fh.model.Flight">
         insert into k_flight_ticket values (null,#{id},#{jicang},#{count},#{price})
     </insert>
+    <delete id="shanchu1" parameterType="int">
+        delete from k_flight_ticket where flightId=#{id}
+    </delete>
+    <delete id="shanchu2" parameterType="int">
+delete from k_flight where id=#{id}
+    </delete>
 </mapper>

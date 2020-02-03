@@ -75,5 +75,10 @@ public class FlightController {
     public void addflight(Flight flight){
         flightService.addflight(flight);
     }
+    @RequestMapping("shanchu")
+    @ResponseBody
+    public void shanchu(int id){
+        flightService.shanchu(id);
+    }
 
 }

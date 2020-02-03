@@ -36,4 +36,8 @@ public interface FlightDao {
     void addflight(Flight flight);
 
     void addJipiao(Flight flight);
+
+    void shanchu1(int id);
+
+    void shanchu2(int id);
 }

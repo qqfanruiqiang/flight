@@ -24,4 +24,6 @@ public interface FlightService {
     List<TicketName> queryJipiao();
 
     void addflight(Flight flight);
+
+    void shanchu(int id);
 }
